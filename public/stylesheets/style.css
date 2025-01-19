@@ -1,29 +1,140 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
 }
 
-a {
-  color: #00B7FF;
-}
-
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
+.wrapper {
   width: 100%;
+  height: 85vh;
+  display: grid;
+  grid-template-areas:
+    "belt tables report-box";
+  grid-template-rows: 2fr 6fr 4fr;
 }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+header > h2 {
+  background-color: burlywood;
 }
 
+
+.tables {
+  height: 85vh;
+  grid-area: tables;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.belt {
+  grid-area: belt;
+  background-color: burlywood;
+  border-radius: 10px;
+  margin: 8px;
+  width: 15vw;
+  height: fit-content;
+}
+
+.report-box {
+  grid-area: report-box;
+  background-color: burlywood;
+  border-radius: 10px;
+  margin: 8px;
+  overflow: scroll;
+  height: max-content;
+  min-height: 20vh;
+  max-height: 80vh;
+  width: 20vw;
+}
+
+.tables {
+  width: 63vw;
+}
+
+.tables table {
+  height: 10px;
+  margin: 8px;
+  border-collapse: separate;
+  border-spacing: 0;
+  word-wrap: break-word;
+  table-layout: fixed;
+}
+
+thead {
+  max-height: 10px;
+}
+
+th {
+  height: 10px;
+  background-color: rgb(187, 146, 113);
+}
+th, td {
+  padding: 10px;
+  border: 1px solid antiquewhite;
+}
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: wheat;
+}
+/* required css to make rounded table (below) */
+tr:first-child th:first-child {
+  border-top-left-radius: 10px;
+}
+tr:first-child th:last-child {
+  border-top-right-radius: 10px;
+}
+tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+.queries li {
+  margin: 10px;
+  background-color: beige;
+  border-radius: 10px;
+  line-height: 2;
+  word-wrap: break-word;
+
+}
+
+.belt li:hover {
+  background-color: wheat;
+}
+
+.belt li {
+  cursor: pointer;
+  margin: 10px;
+  background-color: beige;
+  border-radius: 10px;
+  line-height: 2;
+  word-wrap: break-word;
+
+}
+
+
+ul {
+  padding: 0;
+  text-align: center;
+  list-style-type: none;
 }
 
 .linki { 
+  width: 200px;
+  padding: 10px;
+  color:black;
   display: inline-block; 
-  margin: 1em 4% 1em 0;
+  border-radius: 10px;
+  text-align: center;
+}
+
+
+header {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  /* Set the height of the header to 100% of the viewport height */
+  background-color: #f2f2f2;
 }

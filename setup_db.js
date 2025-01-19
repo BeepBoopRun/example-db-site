@@ -18,15 +18,6 @@ db.serialize(() => {
     Address TEXT
 )`);
 
-	db.run(`CREATE TABLE IF NOT EXISTS Employees (
-    EmployeeID INTEGER PRIMARY KEY,
-    FirstName TEXT NOT NULL,
-    LastName TEXT NOT NULL,
-    Position TEXT NOT NULL,
-    HireDate TEXT NOT NULL,
-    PhoneNumber TEXT
-)`);
-
 	db.run(`CREATE TABLE IF NOT EXISTS Devices (
     DeviceID INTEGER PRIMARY KEY,
     CustomerID INTEGER,

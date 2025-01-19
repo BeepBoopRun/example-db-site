@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>SERWIS ELEKTRONICZNY OŚWIECENIE</title>
+
+        <!-- OWN CSS FILES-->
+        <link rel="stylesheet" href="/stylesheets/style.css"  type="text/css" />
+        <!-- END OWN CSS FILES-->
+        <script src="javascripts/tables.js"></script>
+    </head>
+  <body>
+    <header>
+      <h2 class="linki"><a href="/">Wprowadzenie</a></h2>
+      <h2 class="linki"><a href="szefuncio">Szef</a></h2>
+      <h2 class="linki"><a href="pracownik">Pracownik</a></h2>
+      <h2 class="linki"><a href="klient">Klient</a></h2>
+    </header>
+    <div class="wrapper">
+      <div class="belt">
+        <ul class="options">
+          <li class="Employees">Pracownicy</li>
+          <li class="Customers">Klienci</li>
+          <li class="Orders">Zamówienia</li>
+          <li class="Devices">Urządzenia</li>
+          <li class="Invoices">Faktury</li>
+          <li class="Invoices"><form><label>Huh</label><input type="text"></input></form></li>
+        </ul>
+      </div>
+    <div class="tables">
+      <table class="Employees" style="display: none;">
+        <thead>
+        <tr>
+        <th>ID Pracownika</th>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Rola</th>
+        <th>Data Zatrudnienia</th>
+        <th>Numer telefonu</th>
+      </thead>
+      </table>
+      <table class="Customers" style="display: none;">
+        <thead>
+          <tr>
+          <th>ID Klienta</th>
+          <th>Imię</th>
+          <th>Nazwisko</th>
+          <th>Numer Telefonu</th>
+          <th>Email</th>
+          <th>Adres Zamieszkania</th>
+          </tr>
+        </thead>
+      </table>
+      <table class="Invoices" style="display: none;">
+        <thead>
+          <tr>
+          <th>ID Faktury</th>
+          <th>ID Zamówienia</th>
+          <th>Data Wystawienia</th>
+          <th>Kwota</th>
+          <th>Status Płatności</th>
+          </tr>
+        </thead>
+      </table>
+      <table class="Devices" style="display: none;">
+        <thead>
+        <tr>
+        <th>ID Urządzenia</th>
+        <th>ID Klienta</th>
+        <th>Rodzaj</th>
+        <th>Marka</th>
+        <th>Model</th>
+        <th>Numer Seryjny</th>
+      </thead>
+        </table>
+
+        <table class="Orders" style="display: none;">
+        <thead>
+        <tr>
+        <th>ID Zamówienia</th>
+        <th>ID Urządzenia</th>
+        <th>ID Klienta</th>
+        <th>Data Zamówienia</th>
+        <th>Status</th>
+        <th>Opis</th>
+      </thead>
+        </table>
+    </div>
+
+    <div class="report-box">
+      <ul class="queries">
+      </ul>
+    </div>
+  </div>
+  </body>
+</html>
