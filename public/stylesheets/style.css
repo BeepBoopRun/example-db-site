@@ -5,6 +5,11 @@ body {
   margin: 0;
 }
 
+a, a:visited {
+  color:black;
+  text-decoration: black;
+}
+
 .wrapper {
   width: 100%;
   height: 85vh;
