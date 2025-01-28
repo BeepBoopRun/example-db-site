@@ -9,7 +9,6 @@ async function getData(tableName) {
       if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }
-  
       const text = await response.json();
       return text;
     } catch (error) {
@@ -22,6 +21,7 @@ function htmlToNodes(html) {
     template.innerHTML = html;
     return template.content.childNodes;
 }
+
 async function populateTable(tableName) {
     console.log(this.className)
     tableName = this.className

@@ -4,22 +4,35 @@ var router = new Router();
 import * as db from '../db/index.js'
 import format from "pg-format"
 
+import * as pug from "../views/index.js"
+
 /* GET values from a table. */
 router.get('/:tableName', async (req, res) => {
   const {tableName} = req.params;
   const calledQuery = format('SELECT * FROM %I', tableName);  
 
   const result = await db.query(calledQuery);
-  var list = ``
-  for(const row of result.rows) {
-    list += `<tr>`
-    for(const column of Object.keys(row)) {
-      list += `<td>${row[column]}</td>`
-    }
-    list += `</tr>`
-    console.log(list)
+
+  const headers = []
+  for(const header of Object.keys(result.rows[0])) {
+        headers.push(header)
   }
-  res.send({list, calledQuery})
+
+  const resRows = []
+  for(const row of result.rows) {
+      const newRow = []
+      for(const column of Object.keys(row)) {
+        newRow.push(row[column])
+      }
+      resRows.push(newRow)
+  }
+
+  const outHTML = pug.tbGen({
+    headers: headers,
+    rows: resRows
+  })
+
+  res.send({outHTML, calledQuery})
 });
 
 export default router;
