@@ -1,6 +1,11 @@
 import pg from 'pg'
-const { Pool } = pg
- 
-const pool = new Pool()
- 
-export const query = (text, params) => pool.query(text, params)
+
+const { Client } = pg
+const client = new Client({database: 'taco'})
+await client.connect()
+
+export const query = (text, params) => {
+    console.log(`Got query: ${text} with params: ${params}`);
+    return client.query(text);
+}
+
