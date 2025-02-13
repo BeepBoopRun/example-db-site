@@ -40,7 +40,8 @@ window.onload = () => {
   document.getElementsByClassName("employees")[0].addEventListener("click", populateTable);
   document.getElementsByClassName("devices")[0].addEventListener("click", populateTable);
   document.getElementsByClassName("orders")[0].addEventListener("click", populateTable);
-  document.getElementsByClassName("invoices")[0].addEventListener("click", populateTable);
+  document.getElementsByClassName("order_details")[0].addEventListener("click", populateTable);
+  document.getElementsByClassName("addresses")[0].addEventListener("click", populateTable);
   document.getElementsByClassName("customers")[0].click();
   document.getElementsByClassName("orders")[0].click();
 }

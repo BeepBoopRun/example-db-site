@@ -9,6 +9,8 @@ import szefuncioRouter from './routes/szefuncio.js';
 import pracownikRouter from './routes/pracownik.js';
 import klientRouter from './routes/klient.js';
 import indexRouter from './routes/index.js';
+import addClientRouter from './routes/add_client.js';
+
 var app = express();
 
 import { fileURLToPath } from 'url';
@@ -26,7 +28,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+app.use('/add_client', addClientRouter);
 app.use('/tables', tablesRouter);
 app.use('/szefuncio', szefuncioRouter);
 app.use('/pracownik', pracownikRouter);

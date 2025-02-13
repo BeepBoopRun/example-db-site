@@ -15,7 +15,8 @@ a, a:visited {
   height: 85vh;
   display: grid;
   grid-template-areas:
-    "belt tables report-box";
+  "belt tables report-box"
+  "modify tables report-box";
   grid-template-rows: 2fr 6fr 4fr;
 }
 
@@ -40,6 +41,17 @@ header > h2 {
   width: 15vw;
   height: fit-content;
 }
+
+.modify {
+  display: flex;
+  grid-area: modify;
+  background-color: burlywood;
+  border-radius: 10px;
+  margin: 8px;
+  width: 15vw;
+  height: fit-content;
+}
+
 
 .report-box {
   grid-area: report-box;
@@ -119,6 +131,7 @@ tr:last-child td:last-child {
 }
 
 
+
 ul {
   padding: 0;
   text-align: center;
@@ -142,4 +155,21 @@ header {
   justify-content: space-around;
   /* Set the height of the header to 100% of the viewport height */
   background-color: #f2f2f2;
+}
+
+.form-example {
+  background-color: wheat;
+  display: grid;
+  justify-items: center;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.modify {
+  justify-content: center;
+}
+
+.client-adder {
+  width: inherit;
 }
