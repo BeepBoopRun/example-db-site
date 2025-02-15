@@ -5,8 +5,6 @@ import * as db from '../db/index.js'
 import format from "pg-format"
 
 router.post('/', async function(req, res, next) {
-  console.log(req.body)
-
   const body = req.body
 
   const calledQuery = format(
@@ -26,7 +24,7 @@ router.post('/', async function(req, res, next) {
       final_message = err.message;
 
   } 
-  
+
   res.send({final_message})  
 });
 
