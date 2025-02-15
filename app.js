@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/add_client', addClientRouter);
+app.use('/szefuncio', addClientRouter);
 app.use('/tables', tablesRouter);
 app.use('/szefuncio', szefuncioRouter);
 app.use('/pracownik', pracownikRouter);

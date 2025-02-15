@@ -35,6 +35,23 @@ async function populateTable(tableName) {
   console.log(`table: ${tableName} loaded`);
 }
 
+function handleForm(event) { 
+  event.preventDefault();
+    fetch(event.target.action, {
+        method: 'POST',
+        body: new URLSearchParams(new FormData(event.target))
+    }).then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    }).then((body) => {
+      storeQuery(body["calledQuery"])
+      console.log(body)
+    }).catch((error) => {
+    });
+} 
+
 window.onload = () => {
   document.getElementsByClassName("customers")[0].addEventListener("click", populateTable);
   document.getElementsByClassName("employees")[0].addEventListener("click", populateTable);
@@ -44,5 +61,8 @@ window.onload = () => {
   document.getElementsByClassName("addresses")[0].addEventListener("click", populateTable);
   document.getElementsByClassName("customers")[0].click();
   document.getElementsByClassName("orders")[0].click();
+
+  document.getElementById("add_client").addEventListener('submit', handleForm);
+
 }
 

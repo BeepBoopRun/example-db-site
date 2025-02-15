@@ -6,7 +6,6 @@ import format from "pg-format"
 
 import * as pug from "../views/index.js"
 
-/* GET values from a table. */
 router.get('/:tableName', async (req, res) => {
   const {tableName} = req.params;
   const calledQuery = format('SELECT * FROM %I', tableName);  

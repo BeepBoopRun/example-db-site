@@ -25,45 +25,46 @@
       </div>
       <div class="modify">
         <div class="client-adder">
-          <form action="add_client" method="post" class="client-add-form">
+          <form method="post" id="add_client" onsubmit="return false">
             <div class="form-example">
-              <label for="name">Podaj imię: </label>
-              <input type="text" name="name" id="name" required />
+              <label for="fname">Podaj imię: </label>
+              <input type="text" name="fname" id="fname" required />
             </div>
             <div class="form-example">
-              <label for="email">Podaj nazwisko: </label>
-              <input type="email" name="email" id="email" required />
+              <label for="lname">Podaj nazwisko: </label>
+              <input type="text" name="lname" id="lname" required />
             </div>
             <div class="form-example">
-              <label for="email">Podaj numer telefonu: </label>
-              <input type="email" name="email" id="email" required />
+              <label for="tel">Podaj numer telefonu: </label>
+              <input type="tel" name="tel" id="tel" required />
             </div>
             <div class="form-example">
               <label for="email">Podaj adres email: </label>
               <input type="email" name="email" id="email" required />
             </div>
             <div class="form-example">
-              <label for="email">Podaj miasto: </label>
-              <input type="email" name="email" id="email" required />
+              <label for="city">Podaj miasto: </label>
+              <input type="text" name="city" id="city" required />
             </div>
             <div class="form-example">
-              <label for="email">Podaj ulicę: </label>
-              <input type="email" name="email" id="email" required />
+              <label for="street">Podaj ulicę: </label>
+              <input type="text" name="street" id="street" required />
             </div>
             <div class="form-example">
-              <label for="email">Podaj numer ulicy: </label>
-              <input type="email" name="email" id="email" required />
+              <label for="streetn">Podaj numer ulicy: </label>
+              <input type="text" name="streetn" id="streetn" required />
             </div>
             <div class="form-example">
-              <label for="email">Podaj numer bloku: </label>
-              <input type="email" name="email" id="email"/>
+              <label for="streetn2">Podaj numer bloku: </label>
+              <input type="text" name="streetn2" id="streetn2"/>
             </div>
             <div class="form-example">
-              <label for="email">Podaj kod pocztowy: </label>
-              <input type="email" name="email" id="email" required />
+              <label for="postal">Podaj kod pocztowy: </label>
+              <input type="text" name="postal" id="postal" required />
             </div>
             <div class="form-example">
               <input type="submit" value="Dodaj do listy klientów" />
+              <input type="reset" value="Reset">  
             </div>
           </form>
         </div>
