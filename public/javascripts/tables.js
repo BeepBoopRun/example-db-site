@@ -46,7 +46,7 @@ function handleForm(event) {
         }
         return response.json();
     }).then((body) => {
-      storeQuery(body["calledQuery"])
+      storeQuery(body["final_message"])
       console.log(body)
     }).catch((error) => {
     });
