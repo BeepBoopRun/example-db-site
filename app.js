@@ -6,8 +6,6 @@ import logger from 'morgan';
 
 import tablesRouter from './routes/tables.js';
 import szefuncioRouter from './routes/szefuncio.js';
-import pracownikRouter from './routes/pracownik.js';
-import klientRouter from './routes/klient.js';
 import indexRouter from './routes/index.js';
 import addClientRouter from './routes/add_client.js';
 
@@ -31,8 +29,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/szefuncio', addClientRouter);
 app.use('/tables', tablesRouter);
 app.use('/szefuncio', szefuncioRouter);
-app.use('/pracownik', pracownikRouter);
-app.use('/klient', klientRouter);
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler

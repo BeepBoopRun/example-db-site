@@ -8,10 +8,11 @@ router.post('/', async function(req, res, next) {
   const body = req.body
 
   const calledQuery = format(
-    `WITH ids AS (INSERT INTO addresses VALUES (DEFAULT,%L,%L,%L,%L,%L) RETURNING address_id)
-     INSERT INTO customers VALUES (DEFAULT,%L,%L,%L,%L,(SELECT address_id FROM ids));`,
-    body.city,body.street,body.streetn,body.streetn2,body.postal,
-    body.fname, body.lname, body.tel, body.email);
+    `
+    call add_customer(%L,%L,%L,%L,%L,%L,%L,%L,%L)
+    `,
+    body.fname, body.lname, body.tel, body.email,body.city,body.street,body.streetn,body.streetn2,body.postal
+  )
 
   let final_message;
 
