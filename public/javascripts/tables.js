@@ -52,6 +52,22 @@ function handleForm(event) {
     });
 } 
 
+function handleButtonPress(event) {
+  if(event.target.id == "add-button") {
+    document.getElementsByClassName("client-adder")[0].style.display = "";
+    document.getElementsByClassName("client-modifier")[0].style.display = "none";
+    document.getElementsByClassName("client-remover")[0].style.display = "none";
+  } if(event.target.id == "modify-button") {
+    document.getElementsByClassName("client-adder")[0].style.display = "none";
+    document.getElementsByClassName("client-modifier")[0].style.display = "";
+    document.getElementsByClassName("client-remover")[0].style.display = "none";
+  } if(event.target.id == "remove-button") {
+    document.getElementsByClassName("client-adder")[0].style.display = "none";
+    document.getElementsByClassName("client-modifier")[0].style.display = "none";
+    document.getElementsByClassName("client-remover")[0].style.display = "";
+  }
+}
+
 window.onload = () => {
   document.getElementsByClassName("customers")[0].addEventListener("click", populateTable);
   document.getElementsByClassName("employees")[0].addEventListener("click", populateTable);
@@ -63,6 +79,12 @@ window.onload = () => {
   document.getElementsByClassName("orders")[0].click();
 
   document.getElementById("add_client").addEventListener('submit', handleForm);
+  document.getElementById("modify_client").addEventListener('submit', handleForm);
+  document.getElementById("remove_client").addEventListener('submit', handleForm);
+
+  document.getElementById("add-button").addEventListener('click', handleButtonPress);
+  document.getElementById("modify-button").addEventListener('click', handleButtonPress);
+  document.getElementById("remove-button").addEventListener('click', handleButtonPress);
 
 }
 

@@ -8,6 +8,8 @@ import tablesRouter from './routes/tables.js';
 import szefuncioRouter from './routes/szefuncio.js';
 import indexRouter from './routes/index.js';
 import addClientRouter from './routes/add_client.js';
+import modifyClientRouter from './routes/modify_client.js';
+import removeClientRouter from './routes/remove_client.js';
 
 var app = express();
 
@@ -26,7 +28,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/szefuncio', addClientRouter);
+app.use('/add_client', addClientRouter);
+app.use('/remove_client', removeClientRouter);
+app.use('/modify_client', modifyClientRouter);
 app.use('/tables', tablesRouter);
 app.use('/szefuncio', szefuncioRouter);
 app.use('/', indexRouter);

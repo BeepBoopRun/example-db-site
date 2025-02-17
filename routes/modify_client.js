@@ -1,0 +1,32 @@
+import Router from 'express-promise-router';
+var router = new Router();
+
+import * as db from '../db/index.js'
+import format from "pg-format"
+
+router.post('/', async function(req, res, next) {
+/*   const body = req.body
+
+  const calledQuery = format(
+    `
+    call add_customer(%L,%L,%L,%L,%L,%L,%L,%L,%L)
+    `,
+    body.fname, body.lname, body.tel, body.email,body.city,body.street,body.streetn,body.streetn2,body.postal
+  )
+
+  let final_message;
+
+  try {
+    const result = await db.query(calledQuery);
+    final_message = calledQuery;
+    console.log(result)
+  } catch (err) {
+      console.error(err.message);
+      final_message = err.message;
+
+  } 
+ */
+  res.send({final_message: "modyfikacja klienta"})  
+});
+
+export default router;
