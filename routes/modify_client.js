@@ -5,13 +5,19 @@ import * as db from '../db/index.js'
 import format from "pg-format"
 
 router.post('/', async function(req, res, next) {
-/*   const body = req.body
+  
+  let body = req.body;
 
+  for (let key in body) {
+    if (body[key] === '') {
+      body[key] = null;
+    }
+  }
   const calledQuery = format(
     `
-    call add_customer(%L,%L,%L,%L,%L,%L,%L,%L,%L)
+    CALL modify_customer(%L,%L,%L,%L,%L,%L,%L,%L,%L,%L)
     `,
-    body.fname, body.lname, body.tel, body.email,body.city,body.street,body.streetn,body.streetn2,body.postal
+    body.id, body.fname, body.lname, body.tel, body.email,body.city,body.street,body.streetn,body.streetn2,body.postal
   )
 
   let final_message;
@@ -25,8 +31,8 @@ router.post('/', async function(req, res, next) {
       final_message = err.message;
 
   } 
- */
-  res.send({final_message: "modyfikacja klienta"})  
+
+  res.send({final_message})  
 });
 
 export default router;

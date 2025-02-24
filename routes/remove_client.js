@@ -5,13 +5,13 @@ import * as db from '../db/index.js'
 import format from "pg-format"
 
 router.post('/', async function(req, res, next) {
-/*   const body = req.body
+  const body = req.body
 
   const calledQuery = format(
     `
-    call add_customer(%L,%L,%L,%L,%L,%L,%L,%L,%L)
+    DELETE FROM customers WHERE customer_id=%L
     `,
-    body.fname, body.lname, body.tel, body.email,body.city,body.street,body.streetn,body.streetn2,body.postal
+    body.id
   )
 
   let final_message;
@@ -25,8 +25,8 @@ router.post('/', async function(req, res, next) {
       final_message = err.message;
 
   } 
- */
-  res.send({final_message: "usuwanie klienta"})  
+
+  res.send({final_message})  
 });
 
 export default router;

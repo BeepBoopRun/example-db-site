@@ -35,7 +35,7 @@ async function populateTable(tableName) {
   console.log(`table: ${tableName} loaded`);
 }
 
-function handleForm(event) { 
+async function handleForm(event) { 
   event.preventDefault();
     fetch(event.target.action, {
         method: 'POST',
@@ -48,6 +48,19 @@ function handleForm(event) {
     }).then((body) => {
       storeQuery(body["final_message"])
       console.log(body)
+      const tables = document.getElementsByClassName("tables")[0]
+      if(tables.getElementsByClassName("customers").length > 0) {
+        getData("customers").then((rows) => {
+          storeQuery(rows["calledQuery"])
+          document.getElementsByClassName("tables")[0].getElementsByClassName("customers")[0].innerHTML = rows["outHTML"]
+        })
+      }      
+      if(tables.getElementsByClassName("addresses").length > 0) {
+        getData("addresses").then((rows) => {
+          storeQuery(rows["calledQuery"])
+          document.getElementsByClassName("tables")[0].getElementsByClassName("addresses")[0].innerHTML = rows["outHTML"]
+        })
+      }
     }).catch((error) => {
     });
 } 
@@ -72,11 +85,11 @@ window.onload = () => {
   document.getElementsByClassName("customers")[0].addEventListener("click", populateTable);
   document.getElementsByClassName("employees")[0].addEventListener("click", populateTable);
   document.getElementsByClassName("devices")[0].addEventListener("click", populateTable);
-  document.getElementsByClassName("orders")[0].addEventListener("click", populateTable);
+  document.getElementsByClassName("ongoing_orders")[0].addEventListener("click", populateTable);
   document.getElementsByClassName("order_details")[0].addEventListener("click", populateTable);
   document.getElementsByClassName("addresses")[0].addEventListener("click", populateTable);
   document.getElementsByClassName("customers")[0].click();
-  document.getElementsByClassName("orders")[0].click();
+  document.getElementsByClassName("ongoing_orders")[0].click();
 
   document.getElementById("add_client").addEventListener('submit', handleForm);
   document.getElementById("modify_client").addEventListener('submit', handleForm);

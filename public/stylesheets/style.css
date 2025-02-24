@@ -188,3 +188,11 @@ header {
 .client-adder {
   width: inherit;
 }
+
+.client-modifier {
+  width: inherit;
+}
+
+.client-remover {
+  width: inherit;
+}
